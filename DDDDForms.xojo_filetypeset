@@ -1,0 +1,18 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=DDDDforms
+		Extension=4Dform
+		Flags=&h2
+		MacCreator=
+		MacType=
+		Name=4DForms
+		UTI=
+		UTIConformsTo=,public.data
+		Description=4D form files
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet
