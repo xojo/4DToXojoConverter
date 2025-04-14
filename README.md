@@ -2,6 +2,8 @@
 
 This project is for converting 4D forms to Xojo desktop windows.
 
+The current version is 1.0b1.
+
 # Supported 4D controls
 
 Currently it can convert the following 4D controls:
