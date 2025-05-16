@@ -51,7 +51,7 @@ Begin DesktopWindow MainWindow
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   92
+      Top             =   93
       Transparent     =   False
       Underline       =   False
       Visible         =   True

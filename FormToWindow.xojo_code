@@ -453,55 +453,57 @@ Protected Class FormToWindow
 		      Var pages() As Object = item.Value
 		      For j As Integer = 0 To pages.LastIndex
 		        Var ctrls As Dictionary = Dictionary(pages(j))
-		        ctrls = ctrls.Value("objects")
-		        For Each theControl As DictionaryEntry In ctrls
-		          Var ctrlName As String = theControl.Key
-		          Var theProperties As Dictionary = theControl.Value
-		          Select Case theProperties.Value("type")
-		          Case "button"
-		            AddAsXojoButton(ctrlName, theProperties)
-		          Case "checkbox"
-		            AddAsXojoCheckBox(ctrlName, theProperties)
-		          Case "combo"
-		            AddAsXojoComboBox(ctrlName, theProperties)
-		          Case "dropdown"
-		            AddAsXojoPopupMenu(ctrlName, theProperties)
-		          Case "groupbox"
-		            AddAsXojoGroupBox(ctrlName, theProperties)
-		          Case "input"
-		            AddAsXojoTextFieldArea(ctrlName, theProperties)
-		          Case "line"
-		            AddAsXojoSeparator(ctrlName, theProperties)
-		          Case "list"
-		            AddAsXojoHeirarchicalListBox(ctrlName, theProperties)
-		          Case "listbox"
-		            AddAsXojoListBox(ctrlName, theProperties)
-		          Case "oval"
-		            AddAsXojoOval(ctrlName, theProperties)
-		          Case "picturebutton"
-		            AddAsXojoBevelButton(ctrlName, theProperties)
-		          Case "progress"
-		            AddAsXojoProgressBar(ctrlName, theProperties)
-		          Case "radio"
-		            AddAsXojoRadioButton(ctrlName, theProperties)
-		          Case "rectangle"
-		            AddAsXojoRectangle(ctrlName, theProperties)
-		          Case "ruler"
-		            AddAsXojoSlider(ctrlName, theProperties)
-		          Case "spinner"
-		            AddAsXojoProgressWheel(ctrlName, theProperties)
-		          Case "stepper"
-		            AddAsXojoUpDownArrows(ctrlName, theProperties)
-		          Case "tab"
-		            AddAsXojoTabPanel(ctrlName, theProperties)
-		          Case "text"
-		            AddAsXojoLabel(ctrlName, theProperties)
-		          Case "webarea"
-		            AddAsXojoHTMLViewer(ctrlName, theProperties)
-		          Else
-		            AddAsXojoUnsupportedControl(ctrlName, theProperties, theProperties.Value("type"))
-		          End Select
-		        Next
+		        if ctrls <> nil then
+		          ctrls = ctrls.Value("objects")
+		          For Each theControl As DictionaryEntry In ctrls
+		            Var ctrlName As String = theControl.Key
+		            Var theProperties As Dictionary = theControl.Value
+		            Select Case theProperties.Value("type")
+		            Case "button"
+		              AddAsXojoButton(ctrlName, theProperties)
+		            Case "checkbox"
+		              AddAsXojoCheckBox(ctrlName, theProperties)
+		            Case "combo"
+		              AddAsXojoComboBox(ctrlName, theProperties)
+		            Case "dropdown"
+		              AddAsXojoPopupMenu(ctrlName, theProperties)
+		            Case "groupbox"
+		              AddAsXojoGroupBox(ctrlName, theProperties)
+		            Case "input"
+		              AddAsXojoTextFieldArea(ctrlName, theProperties)
+		            Case "line"
+		              AddAsXojoSeparator(ctrlName, theProperties)
+		            Case "list"
+		              AddAsXojoHeirarchicalListBox(ctrlName, theProperties)
+		            Case "listbox"
+		              AddAsXojoListBox(ctrlName, theProperties)
+		            Case "oval"
+		              AddAsXojoOval(ctrlName, theProperties)
+		            Case "picturebutton"
+		              AddAsXojoBevelButton(ctrlName, theProperties)
+		            Case "progress"
+		              AddAsXojoProgressBar(ctrlName, theProperties)
+		            Case "radio"
+		              AddAsXojoRadioButton(ctrlName, theProperties)
+		            Case "rectangle"
+		              AddAsXojoRectangle(ctrlName, theProperties)
+		            Case "ruler"
+		              AddAsXojoSlider(ctrlName, theProperties)
+		            Case "spinner"
+		              AddAsXojoProgressWheel(ctrlName, theProperties)
+		            Case "stepper"
+		              AddAsXojoUpDownArrows(ctrlName, theProperties)
+		            Case "tab"
+		              AddAsXojoTabPanel(ctrlName, theProperties)
+		            Case "text"
+		              AddAsXojoLabel(ctrlName, theProperties)
+		            Case "webarea"
+		              AddAsXojoHTMLViewer(ctrlName, theProperties)
+		            Else
+		              AddAsXojoUnsupportedControl(ctrlName, theProperties, theProperties.Value("type"))
+		            End Select
+		          Next
+		        end if
 		      Next
 		    End If
 		  Next
